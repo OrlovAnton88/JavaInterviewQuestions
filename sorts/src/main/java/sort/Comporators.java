@@ -1,25 +1,18 @@
+package sort;
+
 import java.util.Comparator;
 
 /**
  * Author:      oav <br>
- * Date:        18.01.16, 19:13 <br>
+ * Date:        20.01.16, 12:29 <br>
  * Company:     SofIT labs <br>
  * Revision:    $Id$ <br>
  * Description: <br>
  */
-public class Main {
+public class Comporators {
 
-    public static void main(String[] args) {
-
-        final String[] arr = { "z", "a", "x","b","a","t","w","c","n","m"};
-
-        for (String s : arr) {
-            System.out.println(s);
-        }
-
-        System.out.println("-------------------");
-        Quicksort qs = new Quicksort();
-        qs.sort(arr, new Comparator<String>() {
+    public static Comparator getStringComporator(){
+        return new Comparator<String>() {
 
             public int compare(final String o1, final String o2) {
                 final char[] v1 = o1.toCharArray();
@@ -38,11 +31,7 @@ public class Main {
                 }
                 return l1-l2;
             }
-        });
-        for (String s : arr) {
-            System.out.println(s);
-        }
-
+        };
     }
 
 }
